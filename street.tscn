@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv3e8gdaoeud1"]
+
+[ext_resource type="Texture2D" uid="uid://bj8lrenc5u5rh" path="res://Street-red.png" id="1_irwmb"]
+[ext_resource type="PackedScene" uid="uid://dn6rm1q8548yv" path="res://player.tscn" id="2_rpp3x"]
+
+[node name="Street" type="Node2D"]
+position = Vector2(87, 249)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(873, 291)
+scale = Vector2(1, 0.999074)
+texture = ExtResource("1_irwmb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0.392157, 0.396078, 0.419608)
+
+[node name="Player" parent="." instance=ExtResource("2_rpp3x")]
+position = Vector2(1, 1)
