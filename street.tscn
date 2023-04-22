@@ -12,10 +12,9 @@ scale = Vector2(1, 0.999074)
 texture = ExtResource("1_irwmb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_right = 1920.0
-offset_bottom = 1080.0
-color = Color(0, 0.392157, 0.396078, 0.419608)
+offset_right = 1745.0
+offset_bottom = 583.0
+color = Color(0.12549, 0.329412, 0.290196, 0.717647)
 
 [node name="Player" parent="." instance=ExtResource("2_rpp3x")]
 position = Vector2(1, 1)
