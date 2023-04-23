@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends Area2D
 
 @export var shapes = ["Star", "Triangle", "Circle", "Square"]
 @export var shape = ""

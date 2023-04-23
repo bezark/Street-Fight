@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var shapes = ["Star", "Triangle", "Circle", "Square"]
-@export var shape = ""
+@export var shape = "Star"
 
 
 
@@ -38,6 +38,14 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_right"):
 			position.x += 194
 			#(0 + 5 + 1) % 5
-			
+		
 
 
+
+
+func _on_area_2d_area_entered(area):
+	if area.shape == shape:
+		print("Success")
+		area.hide() #TODO: CAN'T JUST HIDE
+	else:
+		print("Uh Oh")
