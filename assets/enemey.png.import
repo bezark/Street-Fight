@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj8lrenc5u5rh"
-path="res://.godot/imported/Street-red.png-bd8b7c9d560de077097ffeb477f62b23.ctex"
+uid="uid://dx30lipsq2p0c"
+path="res://.godot/imported/enemey.png-1ef2608718a97a23d7c1c959fee02ea6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Street-red.png"
-dest_files=["res://.godot/imported/Street-red.png-bd8b7c9d560de077097ffeb477f62b23.ctex"]
+source_file="res://assets/enemey.png"
+dest_files=["res://.godot/imported/enemey.png-1ef2608718a97a23d7c1c959fee02ea6.ctex"]
 
 [params]
 

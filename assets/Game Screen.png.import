@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fxgdacvnwkg8"
-path="res://.godot/imported/Street.png-aa7f043f2ebac4e5784980068af00f01.ctex"
+uid="uid://do8q8oive2avn"
+path="res://.godot/imported/Game Screen.png-ee5f9e0350dfb67d2aa6e9336c1e6536.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Street.png"
-dest_files=["res://.godot/imported/Street.png-aa7f043f2ebac4e5784980068af00f01.ctex"]
+source_file="res://assets/Game Screen.png"
+dest_files=["res://.godot/imported/Game Screen.png-ee5f9e0350dfb67d2aa6e9336c1e6536.ctex"]
 
 [params]
 
