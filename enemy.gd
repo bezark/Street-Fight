@@ -5,8 +5,8 @@ extends Area2D
 
 
 func _ready():
-	# There has to be a better way to do this...
-	var shape_int = randi_range(0, shapes.size()-1)
+	randomize()
+	var shape_int = randi() % shapes.size()
 	$Shapes.frame = shape_int
 	shape = shapes[shape_int]
 	print(shape)
