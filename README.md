@@ -8,4 +8,3 @@ Currently if you open the project and run the main scene and press up down left 
 i'm not attached to any of this
 
 add whatever you want lol
-
