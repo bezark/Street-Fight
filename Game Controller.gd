@@ -1,11 +1,26 @@
-extends Node2D
+extends Node
 
+var EnemyScene = preload("res://enemy.tscn")
+var nextEnemySpawnTime = 5
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	print("Script ready")
+	print(EnemyScene)
+	$EnemySpawner.timeout.connect(_on_EnemySpawner_timeout)
 
+func _on_EnemySpawner_timeout():
+	print("Spawning enemy")  # Added print statement
+	var enemy = EnemyScene.instantiate()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	if enemy:
+		print("Enemy instanced")
+		# random int between 0 and 2
+		randomize()
+		enemy.position = Vector2(194*8, randi() % 3 * 194)
+
+		add_child(enemy)
+	else:
+		print("Error: Could not instance enemy")
+
+	$EnemySpawner.start(nextEnemySpawnTime)
+	nextEnemySpawnTime -= 0.1
