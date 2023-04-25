@@ -24,3 +24,10 @@ func _on_EnemySpawner_timeout():
 
 	$EnemySpawner.start(nextEnemySpawnTime)
 	nextEnemySpawnTime -= 0.1
+	
+
+
+#increase all enemy movement speed
+func _on_every_body_move_timeout():
+	$EveryBodyMove.wait_time -= 0.001
+	

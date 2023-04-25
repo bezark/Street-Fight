@@ -19,20 +19,20 @@ offset_right = 1833.0
 offset_bottom = 831.0
 color = Color(1, 0.0235294, 0.603922, 0.717647)
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Street_Floor" type="Sprite2D" parent="."]
 position = Vector2(872.5, 291.635)
 scale = Vector2(0.999427, 1.00126)
 texture = ExtResource("1_jm8sk")
 
-[node name="Walls" type="RigidBody2D" parent="Background"]
+[node name="Walls" type="RigidBody2D" parent="Street_Floor"]
 inertia = 100.0
 gravity_scale = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Walls"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Street_Floor/Walls"]
 position = Vector2(0.500305, -416.111)
 shape = SubResource("RectangleShape2D_xx55w")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/Walls"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Street_Floor/Walls"]
 position = Vector2(0.500122, 412.845)
 shape = SubResource("RectangleShape2D_xx55w")
 
@@ -49,13 +49,14 @@ position = Vector2(1, 1)
 visible = false
 position = Vector2(1361, 195)
 
-[node name="Enemy2" parent="." instance=ExtResource("3_n0wy0")]
-visible = false
-position = Vector2(777, 395)
-
 [node name="EnemySpawner" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 autostart = true
 
+[node name="EveryBodyMove" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_entered" from="Enemy" to="." method="_on_enemy_body_entered"]
+[connection signal="timeout" from="EveryBodyMove" to="." method="_on_every_body_move_timeout"]
+[connection signal="timeout" from="EveryBodyMove" to="Enemy" method="_on_every_body_move_timeout"]
