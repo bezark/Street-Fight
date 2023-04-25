@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxgdrpjcild2a"]
+[gd_scene load_steps=7 format=3 uid="uid://bxgdrpjcild2a"]
 
 [ext_resource type="Texture2D" uid="uid://bj8lrenc5u5rh" path="res://assets/Street-red.png" id="1_jm8sk"]
 [ext_resource type="Script" path="res://Game Controller.gd" id="1_ktcte"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xx55w"]
 size = Vector2(1921.1, 243.693)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6k4ff"]
+size = Vector2(456.26, 1086.63)
 
 [node name="Street" type="Node2D"]
 position = Vector2(87, 249)
@@ -28,13 +31,20 @@ texture = ExtResource("1_jm8sk")
 inertia = 100.0
 gravity_scale = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Street_Floor/Walls"]
+[node name="North" type="CollisionShape2D" parent="Street_Floor/Walls"]
 position = Vector2(0.500305, -416.111)
 shape = SubResource("RectangleShape2D_xx55w")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Street_Floor/Walls"]
+[node name="South" type="CollisionShape2D" parent="Street_Floor/Walls"]
 position = Vector2(0.500122, 412.845)
 shape = SubResource("RectangleShape2D_xx55w")
+
+[node name="Kill" type="Area2D" parent="Street_Floor/Walls"]
+
+[node name="box" type="CollisionShape2D" parent="Street_Floor/Walls/Kill"]
+position = Vector2(-1100.13, -4.62933)
+shape = SubResource("RectangleShape2D_6k4ff")
+debug_color = Color(1, 0.341176, 0.345098, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -57,6 +67,7 @@ autostart = true
 [node name="EveryBodyMove" type="Timer" parent="."]
 autostart = true
 
+[connection signal="area_entered" from="Street_Floor/Walls/Kill" to="." method="_on_kill_area_entered"]
 [connection signal="body_entered" from="Enemy" to="." method="_on_enemy_body_entered"]
 [connection signal="timeout" from="EveryBodyMove" to="." method="_on_every_body_move_timeout"]
 [connection signal="timeout" from="EveryBodyMove" to="Enemy" method="_on_every_body_move_timeout"]

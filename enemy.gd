@@ -28,7 +28,6 @@ func _ready():
 	
 # Squares Movement	
 func _on_every_body_move_timeout():
-	print(shape, " is moving")
 	position.x -= speed
 
 

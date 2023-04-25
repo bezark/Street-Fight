@@ -38,15 +38,23 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_right"):
 			position.x += 194
 			#(0 + 5 + 1) % 5
-		move_and_slide()
-
+		if move_and_slide():
+			var hitThing = get_last_slide_collision()
+			print("HITTING: ",hitThing)
+		
 
 
 
 func _on_area_2d_area_entered(area):
-	if area.shape == shape:
+	
+	if area==$"../Street_Floor/Walls/Kill":
+		print("GAME OVER")
+	else:
+		print(area)
+		if area.shape == shape: 
 			print("Success")
 			area.queue_free()  # Remove the enemy from the scene
-	else:
+		else:
+			print(area.shape)
 			position.x -= 194 #ok mvp but has nasty glitch where you move into the space, check and then move out. Should instead just not be able to enter. oh the enemies should be rigid.
 

@@ -7,7 +7,8 @@ func _ready():
 	print("Script ready")
 	print(EnemyScene)
 	$EnemySpawner.timeout.connect(_on_EnemySpawner_timeout)
-
+	
+	
 func _on_EnemySpawner_timeout():
 	print("Spawning enemy")  # Added print statement
 	var enemy = EnemyScene.instantiate()
@@ -30,4 +31,15 @@ func _on_EnemySpawner_timeout():
 #increase all enemy movement speed
 func _on_every_body_move_timeout():
 	$EveryBodyMove.wait_time -= 0.001
+	
+
+
+
+
+
+func _on_kill_area_entered(area):
+	# TODO: Idk why this is glitchy...
+	#TODO: Creates a bug where if player enters and gets game over then you can't interact with objects again because your area is destroyed. 
+	area.hide()
+	area.queue_free()
 	
