@@ -38,7 +38,14 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_right"):
 			position.x += 194
 			#(0 + 5 + 1) % 5
-		
+#	move_and_slide()
+	move_and_collide(velocity)
+			
+#	var collision_info = move_and_collide(velocity * delta)
+#	if collision_info:
+#		print(collision_info)
+#		velocity = velocity.bounce(collision_info.get_normal())
+#
 
 
 

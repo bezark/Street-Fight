@@ -45,10 +45,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w1df1"]
-size = Vector2(176, 176)
+size = Vector2(192, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8h8uj"]
-size = Vector2(176, 176)
+size = Vector2(192, 192)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_nvexh")
