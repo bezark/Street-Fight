@@ -45,7 +45,8 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.shape == shape:
-		print("Success")
-		area.hide() #TODO: CAN'T JUST HIDE
+			print("Success")
+			area.queue_free()  # Remove the enemy from the scene
 	else:
-		print("Uh Oh")
+			print("Uh Oh")
+
