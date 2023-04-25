@@ -48,5 +48,5 @@ func _on_area_2d_area_entered(area):
 			print("Success")
 			area.queue_free()  # Remove the enemy from the scene
 	else:
-			print("Uh Oh")
+			position.x -= 194 #ok mvp but has nasty glitch where you move into the space, check and then move out. Should instead just not be able to enter. oh the enemies should be rigid.
 
