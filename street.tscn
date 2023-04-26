@@ -33,7 +33,6 @@ gravity_scale = 0.0
 
 [node name="North" type="CollisionShape2D" parent="Street_Floor/Walls"]
 position = Vector2(56.5324, -643.824)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xx55w")
 
 [node name="South" type="CollisionShape2D" parent="Street_Floor/Walls"]
@@ -44,7 +43,6 @@ shape = SubResource("RectangleShape2D_xx55w")
 
 [node name="box" type="CollisionShape2D" parent="Street_Floor/Walls/Kill"]
 position = Vector2(-1112.14, -0.634521)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6k4ff")
 debug_color = Color(1, 0.341176, 0.345098, 1)
 
