@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bfri2mo54r7ho" path="res://enemy.tscn" id="3_n0wy0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xx55w"]
-size = Vector2(1921.1, 243.693)
+size = Vector2(1921.1, 192.758)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6k4ff"]
-size = Vector2(456.26, 1086.63)
+size = Vector2(432.247, 1078.64)
 
 [node name="Street" type="Node2D"]
 position = Vector2(87, 249)
@@ -32,17 +32,19 @@ inertia = 100.0
 gravity_scale = 0.0
 
 [node name="North" type="CollisionShape2D" parent="Street_Floor/Walls"]
-position = Vector2(0.500305, -416.111)
+position = Vector2(56.5324, -643.824)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xx55w")
 
 [node name="South" type="CollisionShape2D" parent="Street_Floor/Walls"]
-position = Vector2(0.500122, 412.845)
+position = Vector2(64.537, 658.535)
 shape = SubResource("RectangleShape2D_xx55w")
 
 [node name="Kill" type="Area2D" parent="Street_Floor/Walls"]
 
 [node name="box" type="CollisionShape2D" parent="Street_Floor/Walls/Kill"]
-position = Vector2(-1100.13, -4.62933)
+position = Vector2(-1112.14, -0.634521)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6k4ff")
 debug_color = Color(1, 0.341176, 0.345098, 1)
 
@@ -57,7 +59,7 @@ position = Vector2(1, 1)
 
 [node name="Enemy" parent="." instance=ExtResource("3_n0wy0")]
 visible = false
-position = Vector2(1361, 195)
+position = Vector2(1833, 815)
 
 [node name="EnemySpawner" type="Timer" parent="."]
 wait_time = 5.0
@@ -68,6 +70,6 @@ autostart = true
 autostart = true
 
 [connection signal="area_entered" from="Street_Floor/Walls/Kill" to="." method="_on_kill_area_entered"]
-[connection signal="body_entered" from="Enemy" to="." method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="Street_Floor/Walls/Kill" to="." method="_on_kill_body_entered"]
 [connection signal="timeout" from="EveryBodyMove" to="." method="_on_every_body_move_timeout"]
 [connection signal="timeout" from="EveryBodyMove" to="Enemy" method="_on_every_body_move_timeout"]
