@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpnqam6x0sc5w"]
+[gd_scene load_steps=11 format=3 uid="uid://cpnqam6x0sc5w"]
 
 [ext_resource type="Texture2D" uid="uid://dvu85eqk0o3t0" path="res://assets/Checkers.png" id="1_2gber"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3h7t5"]
 [ext_resource type="PackedScene" uid="uid://q8bn586a3bgy" path="res://scenes/player.tscn" id="2_wc5yv"]
 [ext_resource type="Texture2D" uid="uid://dy1mu8x571hja" path="res://assets/player.png" id="3_pxh23"]
+[ext_resource type="Script" path="res://scenes/enemy_spawner.gd" id="5_icak0"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_n3x56"]
 tile_data = PackedInt32Array(0, 0, 0, 65536, 65536, 1, 131072, 0, 0, 1, 65536, 1, 65537, 0, 0, 131073, 65536, 1, 2, 0, 0, 65538, 65536, 1, 131074, 0, 0)
@@ -58,5 +59,13 @@ position = Vector2(250, 150)
 [node name="TurnTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="Enemy_Spawner" type="Node" parent="."]
+script = ExtResource("5_icak0")
 
 [connection signal="timeout" from="TurnTimer" to="." method="_on_turn_timer_timeout"]
