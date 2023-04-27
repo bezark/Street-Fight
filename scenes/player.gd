@@ -22,7 +22,8 @@ func _render_movement_options():
 	print("Map coords: ", Board.local_to_map(position))
 	for spaceOffset in currentMovementPattern:
 		var moveOption = Board.local_to_map(position)+spaceOffset
-		Board.set_cell(1,moveOption,1,Vector2i(0,0))
+		if moveOption.x >= 0 and moveOption.x < 10 and moveOption.y >= 0 and moveOption.y < 10:
+			Board.set_cell(1, moveOption, 1, Vector2i(0, 0))
 	print(position)
 
 
