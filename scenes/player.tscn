@@ -1,0 +1,74 @@
+[gd_scene load_steps=9 format=3 uid="uid://q8bn586a3bgy"]
+
+[ext_resource type="Texture2D" uid="uid://dy1mu8x571hja" path="res://assets/player.png" id="1_161s5"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_v1nvf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcb44"]
+size = Vector2(100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o35q"]
+atlas = ExtResource("1_161s5")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5883"]
+atlas = ExtResource("1_161s5")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfth7"]
+atlas = ExtResource("1_161s5")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giibj"]
+atlas = ExtResource("1_161s5")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lxvlq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o35q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5883")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfth7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giibj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_v1nvf")
+currentMovementPattern = [Vector2i(-1, 0), Vector2i(1, 0), Vector2i(0, -1), Vector2i(0, 1)]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_mcb44")
+metadata/_edit_lock_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+visible = false
+position = Vector2(-50, -50)
+rotation = 3.14159
+sprite_frames = SubResource("SpriteFrames_lxvlq")
+
+[node name="ColorRect2" type="ColorRect" parent="CollisionShape2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.219608, 1, 1, 1)
+
+[node name="offset" type="Node2D" parent="."]
